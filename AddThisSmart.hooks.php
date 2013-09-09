@@ -21,12 +21,12 @@ class AddThisSmartHooks {
        return true;
 	}
     public static function addAddThisSmart () {
-        global $wgAddThisSmartConfArray;
+        global $wgAddThisSmartConfArray,$wgAddThisSmartPubid;
         $json = json_encode($wgAddThisSmartConfArray);
         $html = <<<ADDTHIS
 <!-- AddThis Smart Layers BEGIN -->
 <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=dasch"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={$wgAddThisSmartPubid}"></script>
 <script type="text/javascript">
   addthis.layers({$json});
 </script>
